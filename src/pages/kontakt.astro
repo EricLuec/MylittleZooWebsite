@@ -1,0 +1,82 @@
+---
+import Showcase from '../components/Showcase.astro';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import logos from '../images/pfp.png';
+import backg from '../images/team.jpg';
+
+const visiten = await Astro.glob('../visiten/*.md');
+---
+
+<Layout title="Kontakt">
+  <Showcase heading="Kontakt", text="Auf dieser Seite sind die Kontaktinformationen von den wichtigsten Personen des Aquariums auffindbar."></Showcase>
+    <body>
+      <section class="page-content">
+        <div class="container">
+          {visiten.map(visite => (
+            <Card>
+
+              
+                <h3>{visite.frontmatter.title}</h3>
+                <p>{visite.frontmatter.excerpt}</p>
+                <img class="logos" src="pfp.png" alt="" width="80" />
+                <a class="btn" href={`/${visite.frontmatter.slug}`}>Mehr Informationen</a>
+              
+            </Card>
+          ))}
+
+        </div>
+        
+      </section>
+      <h4>*Den Teammitgliedern wurde erlaubt, ihre eigenen Dateien zu verwenden, um für Individuallität zu sorgen*</h4>
+    </body>
+</Layout>
+
+
+
+<style>
+  .page-content .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    padding-top: 0px;
+    margin: 0 auto;
+    
+    
+  }
+
+  .page-content {
+    background-image: url(team.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+ .btn {
+  justify-content: center;
+  width: 200x;
+  display: flex;
+ }
+
+ h4 {
+		text-align: center;
+		font-weight: bold;
+		
+
+	}
+
+  
+
+  h3 {
+    text-align: center;
+  }
+
+
+  @media (max-width: 500px) {
+  .features .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>

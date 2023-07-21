@@ -1,0 +1,102 @@
+---
+import Showcase from '../components/Showcase.astro';
+import Layout from '../layouts/Layout.astro';
+import logos from '../public/background.webp';
+---
+
+<Layout title="Über / Impressum">
+  <Showcase heading="Über / Impressum", text="Hier finden sie ein Impressum!"></Showcase>
+  <body>
+    <div class="container">
+      
+  
+      <p class="bold">Verantwortlich für den Inhalt:</p>
+      <p>Eric Lücking</p>
+      <p>Aquariumsstrasse 1</p>
+      <p>8001 Zürich</p>
+      
+      <div class="address">
+        <p class="bold">Anschrift:</p>
+          <p>Erics Aquarium</p>
+          <p>Aquariumsstrasse 187</p>
+          <p>8001 Zürich</p>
+      </div>
+  
+      <div class="phone">
+        <p class="bold">Telefon:</p>
+        <p>+41 76 765 76 65</p>
+      </div>
+  
+      <div class="email">
+        <p class="bold">E-Mail:</p>
+        <p>info@aquarium.com</p>
+      </div>
+    </div>
+  </body>
+    
+</Layout>
+
+
+
+
+<style>
+
+body {
+			background-image: url("background.webp");
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			font-family: Arial, sans-serif;
+     		 margin-top: 50px;
+		}
+
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 0;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+		.italic {
+			font-style: italic;
+		}
+
+		.address {
+			margin-top: 40px;
+		}
+
+		.address p {
+			margin-bottom: 10px;
+		}
+
+		.phone {
+			margin-top: 20px;
+		}
+
+		.phone p {
+			margin-bottom: 10px;
+		}
+
+		.email {
+			margin-top: 20px;
+		}
+
+		.email p {
+			margin-bottom: 10px;
+		}
+	</style>
